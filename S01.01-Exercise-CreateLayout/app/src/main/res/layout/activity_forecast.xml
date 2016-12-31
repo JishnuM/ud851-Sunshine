@@ -30,10 +30,10 @@
     <!--COMPLETED (5) Remove all attributes with the word constraint in them-->
     <!--COMPLETED (6) Remove the default text from the TextView-->
     <ScrollView
-        android:id="@+id/tv_weather_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:id="@+id/tv_weather_data"
             android:padding="16dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"
