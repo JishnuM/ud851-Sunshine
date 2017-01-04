@@ -18,9 +18,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--TODO (2) Replace ScrollView and TextView with RecyclerView-->
-    <!--TODO (3) Give the RecyclerView an id of @+id/recyclerview_forecast-->
-    <!--TODO (4) Set the width and the height of the RecyclerView to match_parent-->
+    <!--COMPLETED (2) Replace ScrollView and TextView with RecyclerView-->
+    <!--COMPLETED (3) Give the RecyclerView an id of @+id/recyclerview_forecast-->
+    <!--COMPLETED (4) Set the width and the height of the RecyclerView to match_parent-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_forecast"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
