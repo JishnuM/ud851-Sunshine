@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -218,9 +219,27 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
             loadWeatherData();
             return true;
         }
-
-        // TODO (2) Launch the map when the map menu item is clicked
-
+        // COMPLETED (2) Launch the map when the map menu item is clicked
+        if (id == R.id.action_open_map) {
+            String cinnamon = "Cinnamon College, Singapore - 138595";
+            String base = "geo:0,0";
+            Uri geolocation = Uri.parse(base).buildUpon()
+                    .appendQueryParameter("q", cinnamon).build();
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW);
+            mapIntent.setData(geolocation);
+            if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(mapIntent);
+            }
+            return true;
+        }
+        if (id == R.id.action_share_thoughts) {
+            ShareCompat.IntentBuilder.from(this)
+                    .setChooserTitle("Share Thoughts")
+                    .setType("text/plain")
+                    .setText("Good stuff")
+                    .startChooser();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }
