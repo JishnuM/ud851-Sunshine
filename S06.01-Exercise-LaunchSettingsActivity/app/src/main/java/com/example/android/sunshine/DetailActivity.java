@@ -47,13 +47,19 @@ public class DetailActivity extends AppCompatActivity {
         return shareIntent;
     }
 
+    private Intent createSettingsIntent() {
+        return new Intent(this, SettingsActivity.class);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.detail, menu);
-        MenuItem menuItem = menu.findItem(R.id.action_share);
-        menuItem.setIntent(createShareForecastIntent());
+        MenuItem shareMenuItem = menu.findItem(R.id.action_share);
+        shareMenuItem.setIntent(createShareForecastIntent());
+        MenuItem settingsMenuItem = menu.findItem(R.id.action_detail_settings);
+        settingsMenuItem.setIntent(createSettingsIntent());
         return true;
     }
 
-    // TODO (7) Launch SettingsActivity when the Settings option is clicked
+    // COMPLETED (7) Launch SettingsActivity when the Settings option is clicked
 }
