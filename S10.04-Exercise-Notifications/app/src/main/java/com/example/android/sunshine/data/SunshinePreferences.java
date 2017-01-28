@@ -104,6 +104,12 @@ public final class SunshinePreferences {
         return userPrefersMetric;
     }
 
+    public static boolean isNotificationsEnabled(Context context) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        String key = context.getString(R.string.pref_enable_notifications_key);
+        return sp.getBoolean(key, context.getResources().getBoolean(R.bool.show_notifications_by_default));
+    }
+
     /**
      * Returns the location coordinates associated with the location. Note that there is a
      * possibility that these coordinates may not be set, which results in (0,0) being returned.
